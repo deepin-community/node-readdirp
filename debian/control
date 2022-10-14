@@ -1,0 +1,31 @@
+Source: node-readdirp
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , chai <!nocheck>
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-anymatch (>= 3.0.3) <!nocheck>
+ , node-graceful-fs <!nocheck>
+ , node-rimraf
+ , node-set-immediate-shim <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-readdirp
+Vcs-Git: https://salsa.debian.org/js-team/node-readdirp.git
+Homepage: https://github.com/thlorenz/readdirp
+Rules-Requires-Root: no
+
+Package: node-readdirp
+Architecture: all
+Depends: ${misc:Depends}
+ , node-anymatch (>= 3.0.3)
+ , node-graceful-fs
+ , node-set-immediate-shim
+Description: Recursive version of Node.js's fs.readdir
+ Recursive version of fs.readdir. Exposes a stream API.
+ .
+ Although the stream API is recommended, readdirp also exposes a callback based
+ API.
